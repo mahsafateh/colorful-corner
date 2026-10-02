@@ -351,6 +351,58 @@ main {
     color: var(--color-night);
 }
 
+/* ---------- Hobby page: gallery ---------- */
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-l);
+}
+
+.artwork {
+    padding: var(--space-m);
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow:
+        0 0 0 1px rgba(46, 52, 64, 0.06),
+        0 10px 24px rgba(46, 52, 64, 0.12);
+    transition: transform 0.3s;
+}
+
+.artwork:nth-child(even) {
+    transform: rotate(0.8deg);
+}
+
+.artwork:nth-child(odd) {
+    transform: rotate(-0.8deg);
+}
+
+.artwork:hover {
+    transform: rotate(0) scale(1.02);
+}
+
+.artwork img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.artwork figcaption {
+    margin-top: var(--space-s);
+    text-align: center;
+    font-style: italic;
+}
+
+@media (min-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .artwork--wide {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (min-width: 768px) {
     .split {
         flex-direction: row;
