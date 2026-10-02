@@ -51,6 +51,7 @@ a {
     background-color: var(--color-night);
     color: var(--color-paper);
     padding: var(--space-m) var(--space-l);
+    border-bottom: 3px solid var(--color-gold);
 }
 
 .site-nav {
@@ -123,6 +124,32 @@ main {
 .button:focus-visible {
     background-color: var(--color-paper);
     transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+    padding: var(--space-l);
+    background-color: var(--color-night);
+    color: var(--color-paper);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.site-footer a {
+    color: var(--color-gold);
+}
+
+@media (min-width: 768px) {
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--space-m) var(--space-xl);
+    }
 }
 
 /* ---------- Landing page ---------- */
@@ -289,7 +316,7 @@ main {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: var(--space-l);
 }
 
